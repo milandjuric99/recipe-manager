@@ -1,0 +1,37 @@
+<div>
+    <h2>Recipe List</h2>
+    &nbsp;
+    <a class="fa-solid fa-octagon-plus" (click)="navigateToForm()">Add Recipe</a>
+</div>
+<div>
+    <table class="table table-bordered table-striped table-hover table-responsive-xl">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Rating</th>
+                <th>Time Prep</th>
+                <th>Cuisine</th>
+                <th>Recipe Type</th>
+                <th>Difficulty</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let recipe of recipes">
+                <td>{{ recipe.recipeId }}</td>
+                <td>
+                    <img src="{{'data:image/jpg;base64,' + recipe.image}}" id="recipeImage"/>
+                </td>
+                <td>{{ recipe.name }}</td>
+                <td>{{ recipe.description }}</td>
+                <td>{{ recipe.rating }}</td>
+                <td>{{ recipe.timePrep }}</td>
+                <td>{{ recipe.cuisine.name }}</td>
+                <td>{{ recipe.recipeType.name }}</td>
+                <td>{{ recipe.difficulty.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
